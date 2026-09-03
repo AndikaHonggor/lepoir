@@ -89,7 +89,14 @@ function productColors($id) {
 </main>
 
 <footer id="kontak" class="footer mt-5">
-	<div class="container"><div class="row gy-4 align-items-center"><div class="col-md-6"><h4 class="fw-bold text-white mb-2">Lepoir</h4><p class="text-secondary mb-0"><?php echo htmlspecialchars($pengaturan['deskripsi_perusahaan'] ?? 'Warna rambut untuk mengekspresikan karakter Anda.'); ?></p></div><div class="col-md-6 text-md-end"><h6 class="fw-bold text-white mb-3">Jelajahi Lepoir</h6><p class="mb-2"><a class="footer-link" href="katalog.php">Katalog</a><a class="footer-link" href="warna.php">Panduan Warna</a><a class="footer-link" href="index.php#kontak">Kontak</a></p><div class="d-flex justify-content-md-end gap-2"><a href="mailto:<?php echo htmlspecialchars($pengaturan['email'] ?? ''); ?>" class="social-link" title="Email"><i class="bi bi-envelope-fill"></i></a><?php if (!empty($pengaturan['whatsapp'])): ?><a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $pengaturan['whatsapp']); ?>" class="social-link" title="WhatsApp"><i class="bi bi-whatsapp"></i></a><?php endif; ?></div></div></div><hr class="my-4 border-secondary opacity-25"><div class="text-center text-secondary small">&copy; 2026 Lepoir. All Rights Reserved.</div></div>
+	<div class="container"><div class="row gy-4 align-items-center"><div class="col-md-6"><h4 class="fw-bold text-white mb-2">Lepoir</h4><p class="text-secondary mb-0"><?php echo htmlspecialchars($pengaturan['deskripsi_perusahaan'] ?? 'Warna rambut untuk mengekspresikan karakter Anda.'); ?></p></div><div class="col-md-6 text-md-end"><h6 class="fw-bold text-white mb-3">Jelajahi Lepoir</h6><p class="mb-2"><a class="footer-link" href="katalog.php">Katalog</a><a class="footer-link" href="warna.php">Panduan Warna</a><a class="footer-link" href="index.php#kontak">Kontak</a></p>
+</div>
+<hr class="my-4 border-secondary opacity-25">
+<div class="text-center text-secondary small">
+    &copy; 2026 Lepoir. All Rights Reserved.
+</div>
+
+</div>
 </footer>
 
 <div class="modal fade" id="imageZoomModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content image-modal-content"><div class="modal-header border-0"><h2 id="zoomTitle" class="h5 mb-0"></h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div><div class="modal-body pt-0"><img id="zoomImage" src="" alt="" class="zoom-image"></div></div></div></div>
