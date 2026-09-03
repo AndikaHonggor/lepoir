@@ -1,0 +1,31 @@
+# XAMPP & Local Development
+.env
+.env.local
+*.log
+
+# Editor & IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Uploads
+assets/uploads/*
+!assets/uploads/.gitkeep
+
+# Database Backups
+*.sql.bak
+*.sql.backup
+
+# Cache & Temp
+*.cache
+.cache/
+tmp/
+temp/
+
+# Composer
+vendor/
+composer.lock
