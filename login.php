@@ -87,10 +87,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             <hr class="my-4" style="border-color: var(--card-border);">
             
-            <p class="text-center text-muted small mb-0">
+            <!-- <p class="text-center text-muted small mb-0">
                 Default Email: <strong>admin@asterwear.com</strong><br>
                 Default Password: <strong>admin123</strong>
-            </p>
+            </p> -->
         </div>
     </div>
 
