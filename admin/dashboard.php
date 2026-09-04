@@ -87,7 +87,7 @@ $products = fetchData($products_query);
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div>
                             <h2 class="fw-bold m-0">Dashboard</h2>
-                            <p class="text-muted small m-0">Selamat datang di panel admin LE'POIR</p>
+                            <p class="text-muted small m-0">Selamat datang di Panel admin LE'POIR</p>
                         </div>
                     </div>
 
