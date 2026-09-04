@@ -1,6 +1,6 @@
 <?php
 /**
- * Aster Wear - Katalog Produk
+ * "LE'POIR"- Katalog Produk
  * API untuk AJAX requests (opsional untuk pengembangan lebih lanjut)
  */
 

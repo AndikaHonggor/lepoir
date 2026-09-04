@@ -11,7 +11,7 @@ $pengaturan = fetchSingleData("SELECT * FROM pengaturan LIMIT 1");
 if (!$pengaturan) {
     // Nilai default jika belum ada
     $pengaturan = [
-        'nama_perusahaan' => 'Lepoir',
+        'nama_perusahaan' => 'LEPOIR',
         'deskripsi_perusahaan' => 'Penyedia pakaian berkualitas premium',
         'whatsapp' => '6281234567890',
         'instagram' => 'instagram.com',
@@ -59,7 +59,7 @@ function getColorHex($color) {
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3 shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold fs-4 text-white" href="index.php">
-                <?php if (!empty($pengaturan['logo'])): ?><img src="<?php echo htmlspecialchars($pengaturan['logo']); ?>" alt="Logo Lepoir" class="brand-mark me-2"><?php else: ?><i class="bi bi-droplet-half text-info me-2"></i><?php endif; ?>Lepoir
+                <?php if (!empty($pengaturan['logo'])): ?><img src="<?php echo htmlspecialchars($pengaturan['logo']); ?>" alt="Logo LE'POIR" class="brand-mark me-2"><?php else: ?><i class="bi bi-droplet-half text-info me-2"></i><?php endif; ?>LE'POIR
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -96,7 +96,7 @@ function getColorHex($color) {
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <h1 class="display-4 fw-bold mb-3">Lepoir</h1>
+                        <h1 class="display-4 fw-bold mb-3">LE'POIR</h1>
                         <p class="lead opacity-90 mb-0"><?php echo $pengaturan['deskripsi_perusahaan'] ?? 'Temukan pilihan cat rambut berkualitas untuk warna yang hidup, berani, dan sesuai karakter Anda.'; ?></p>
                     </div>
                 </div>
@@ -225,7 +225,7 @@ function getColorHex($color) {
             </div>
             <hr class="my-4 border-secondary opacity-25">
             <div class="text-center text-secondary small">
-                &copy; 2026 <?php echo $pengaturan['nama_perusahaan']; ?>.
+               All Rights Reserved &copy; 2026  <?php echo $pengaturan['nama_perusahaan'];  ?>.
             </div>
         </div>
     </footer>

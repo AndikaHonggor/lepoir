@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php endif; ?>
             </div>
             <h2>Admin Login</h2>
-            <p class="text-muted">Masuk ke dashboard Lepoir</p>
+            <p class="text-muted">Masuk ke dashboard "LE'POIR"</p>
             
             <?php if ($error): ?>
                 <div class="alert alert-danger">
@@ -84,13 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <i class="bi bi-door-open me-2"></i> Masuk
                 </button>
             </form>
-            
             <hr class="my-4" style="border-color: var(--card-border);">
-            
-            <!-- <p class="text-center text-muted small mb-0">
-                Default Email: <strong>admin@asterwear.com</strong><br>
-                Default Password: <strong>admin123</strong>
-            </p> -->
         </div>
     </div>
 

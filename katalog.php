@@ -3,7 +3,7 @@ require_once 'config/database.php';
 require_once 'config/functions.php';
 
 $products = fetchData("SELECT * FROM produk ORDER BY id DESC");
-$pengaturan = fetchSingleData("SELECT * FROM pengaturan LIMIT 1") ?: ['nama_perusahaan' => 'Lepoir', 'logo' => ''];
+$pengaturan = fetchSingleData("SELECT * FROM pengaturan LIMIT 1") ?: ['nama_perusahaan' => 'LEPOIR', 'logo' => ''];
 $isAdmin = isset($_SESSION['admin_id']) && $_SESSION['admin_id'];
 
 function colorHex($color) {
@@ -20,7 +20,7 @@ function productColors($id) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Katalog Cat Rambut - Lepoir</title>
+	<title>Katalog Cat Rambut - LE'POIR</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,8 +32,8 @@ function productColors($id) {
 <nav class="navbar navbar-dark sticky-top py-3">
 	<div class="container">
 		<a class="navbar-brand d-flex align-items-center" href="index.php">
-			<?php if (!empty($pengaturan['logo'])): ?><img src="<?php echo htmlspecialchars($pengaturan['logo']); ?>" alt="Logo Lepoir" class="brand-mark me-2"><?php else: ?><i class="bi bi-droplet-half text-info me-2"></i><?php endif; ?>
-			<span>Lepoir</span>
+			<?php if (!empty($pengaturan['logo'])): ?><img src="<?php echo htmlspecialchars($pengaturan['logo']); ?>" alt="Logo LE'POIR" class="brand-mark me-2"><?php else: ?><i class="bi bi-droplet-half text-info me-2"></i><?php endif; ?>
+			<span>LE'POIR</span>
 		</a>
 		<div class="navbar-nav ms-auto align-items-lg-center">
 			<a class="nav-link active" href="katalog.php">Katalog</a>
@@ -46,7 +46,7 @@ function productColors($id) {
 
 <header class="catalog-header">
 	<div class="container py-5">
-		<span class="eyebrow">LEPOIR / HAIR COLOR</span>
+		<span class="eyebrow">LE'POIR / HAIR COLOR</span>
 		<h1 class="display-5 fw-bold mt-2">Warna yang terasa seperti kamu.</h1>
 		<p class="lead mb-0">Eksplorasi koleksi cat rambut dengan shade yang berani, lembut, dan mudah dipilih.</p>
 	</div>
@@ -54,7 +54,7 @@ function productColors($id) {
 
 <main class="container py-5">
 	<section class="catalog-toolbar mb-4" aria-label="Pencarian produk">
-		<div><p class="section-kicker mb-1">KOLEKSI LEPOIR</p><h2 class="h3 fw-bold mb-0">Pilih warna favoritmu</h2></div>
+		<div><p class="section-kicker mb-1">KOLEKSI LE'POIR</p><h2 class="h3 fw-bold mb-0">Pilih warna favoritmu</h2></div>
 		<div class="search-field"><i class="bi bi-search" aria-hidden="true"></i><input id="productSearch" type="search" placeholder="Cari nama produk..." aria-label="Cari nama produk"><button id="clearSearch" type="button" aria-label="Hapus pencarian" title="Hapus pencarian"><i class="bi bi-x-lg"></i></button></div>
 	</section>
 	<p id="searchResult" class="text-muted small mb-3" aria-live="polite"></p>
@@ -83,17 +83,17 @@ function productColors($id) {
 
 	<section class="catalog-info mt-5">
 		<div class="info-art" aria-hidden="true"><span class="info-icon"><i class="bi bi-gem"></i></span><span class="paint-stroke paint-stroke-one"></span><span class="paint-stroke paint-stroke-two"></span></div>
-		<div class="info-copy"><p class="section-kicker mb-2">LEPOIR COLOR</p><h2 class="h4 fw-bold">Temukan shade yang jadi signature-mu.</h2><p class="mb-3 text-muted">Setiap warna Lepoir hadir untuk menemani ekspresi yang berbeda. Pilih warna favorit, lalu biarkan karaktermu terlihat lebih hidup.</p><div class="info-tags">
+		<div class="info-copy"><p class="section-kicker mb-2"> LE'POIR COLOR</p><h2 class="h4 fw-bold">Temukan shade yang jadi signature-mu.</h2><p class="mb-3 text-muted">Setiap warna Lepoir hadir untuk menemani ekspresi yang berbeda. Pilih warna favorit, lalu biarkan karaktermu terlihat lebih hidup.</p><div class="info-tags">
 		<div class="info-swatch" aria-hidden="true"><span style="background:#08abe5"></span><span style="background:#5bc9e9"></span><span style="background:#c8edf7"></span><span style="background:#0b5278"></span></div>
 	</section>
 </main>
 
 <footer id="kontak" class="footer mt-5">
-	<div class="container"><div class="row gy-4 align-items-center"><div class="col-md-6"><h4 class="fw-bold text-white mb-2">Lepoir</h4><p class="text-secondary mb-0"><?php echo htmlspecialchars($pengaturan['deskripsi_perusahaan'] ?? 'Warna rambut untuk mengekspresikan karakter Anda.'); ?></p></div><div class="col-md-6 text-md-end"><h6 class="fw-bold text-white mb-3">Jelajahi Lepoir</h6><p class="mb-2"><a class="footer-link" href="katalog.php">Katalog</a><a class="footer-link" href="warna.php">Panduan Warna</a><a class="footer-link" href="index.php#kontak">Kontak</a></p>
+	<div class="container"><div class="row gy-4 align-items-center"><div class="col-md-6"><h4 class="fw-bold text-white mb-2">LE'POIR</h4><p class="text-secondary mb-0"><?php echo htmlspecialchars($pengaturan['deskripsi_perusahaan'] ?? 'Warna rambut untuk mengekspresikan karakter Anda.'); ?></p></div><div class="col-md-6 text-md-end"><h6 class="fw-bold text-white mb-3">Jelajahi LE'POIR</h6><p class="mb-2"><a class="footer-link" href="katalog.php">Katalog</a><a class="footer-link" href="warna.php">Panduan Warna</a><a class="footer-link" href="index.php#kontak">Kontak</a></p>
 </div>
 <hr class="my-4 border-secondary opacity-25">
 <div class="text-center text-secondary small">
-    &copy; 2026 Lepoir. All Rights Reserved.
+    &copy; 2026 LE'POIR. All Rights Reserved.
 </div>
 
 </div>
