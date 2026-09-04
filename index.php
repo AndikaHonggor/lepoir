@@ -225,7 +225,7 @@ function getColorHex($color) {
             </div>
             <hr class="my-4 border-secondary opacity-25">
             <div class="text-center text-secondary small">
-               All Rights Reserved &copy; 2026  <?php echo $pengaturan['nama_perusahaan'];  ?>.
+               All Rights Reserved &copy;2026  <?php echo $pengaturan['nama_perusahaan'];  ?>.
             </div>
         </div>
     </footer>
