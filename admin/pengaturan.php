@@ -98,22 +98,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body style="background-color: var(--light-gray);">
     <!-- Navbar Admin -->
-    <a class="navbar-brand fw-bold fs-4 text-white" href="dashboard.php">
-    <?php if (!empty($pengaturan['logo'])): ?>
-        <img src="../<?php echo htmlspecialchars($pengaturan['logo']); ?>" alt="Logo" class="brand-mark me-2">
-    <?php else: ?>
-        <i class="bi bi-droplet-half text-info me-2"></i>
-    <?php endif; ?>
-    <?php echo htmlspecialchars($pengaturan['nama_perusahaan'] ?? "LE'POIR"); ?> Admin
-</a>
-            <div class="d-flex align-items-center gap-3">
-                <span class="text-light text-sm">Halo, <strong><?php echo $admin_name; ?></strong></span>
-                <button class="btn btn-outline-light btn-sm" onclick="if(confirm('Yakin ingin logout?')) window.location='../logout.php'">
-                    <i class="bi bi-door-open me-1"></i> Logout
-                </button>
-            </div>
+    <nav class="navbar navbar-dark bg-dark py-3 shadow-sm">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Elemen Kiri: Logo & Nama Brand -->
+        <a class="navbar-brand fw-bold fs-4 text-white" href="dashboard.php">
+            <?php if (!empty($pengaturan['logo'])): ?>
+                <img src="../<?php echo htmlspecialchars($pengaturan['logo']); ?>" alt="Logo" class="brand-mark me-2">
+            <?php else: ?>
+                <i class="bi bi-droplet-half text-info me-2"></i>
+            <?php endif; ?>
+            <?php echo htmlspecialchars($pengaturan['nama_perusahaan'] ?? "LE'POIR"); ?> Admin
+        </a>
+
+        <!-- Elemen Kanan: User Info & Tombol Logout -->
+        <div class="d-flex align-items-center gap-3">
+            <span class="text-light text-sm">Halo, <strong><?php echo htmlspecialchars($admin_name); ?></strong></span>
+            <button class="btn btn-outline-light btn-sm" onclick="if(confirm('Yakin ingin logout?')) window.location='../logout.php'">
+                <i class="bi bi-door-open me-1"></i> Logout
+            </button>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <div class="container-fluid py-4">
         <div class="row">
