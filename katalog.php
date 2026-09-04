@@ -3,8 +3,7 @@ require_once 'config/database.php';
 require_once 'config/functions.php';
 
 $products = fetchData("SELECT * FROM produk ORDER BY id DESC");
-$pengaturan = fetchSingleData("SELECT * FROM pengaturan LIMIT 1") ?: ['nama_perusahaan' => 'LEPOIR', 'logo' => ''];
-$isAdmin = isset($_SESSION['admin_id']) && $_SESSION['admin_id'];
+$pengaturan = fetchSingleData("SELECT * FROM pengaturan LIMIT 1") ?: ['nama_perusahaan' => "LE'POIR", 'logo' => '']; $isAdmin = isset($_SESSION['admin_id']) && $_SESSION['admin_id'];
 
 function colorHex($color) {
 	$map = ['hitam'=>'#171717','black'=>'#171717','cokelat'=>'#7a4b2a','brunette'=>'#5c321e','copper'=>'#b87333','pirang'=>'#e5b94d','blonde'=>'#e5b94d','merah'=>'#c62828','burgundy'=>'#800020','ungu'=>'#7e3f98','biru'=>'#2563eb','navy'=>'#172554','pink'=>'#ec78a5','orange'=>'#ed8936','hijau'=>'#3f8f58','olive'=>'#71834b','abu-abu'=>'#94a3b8','grey'=>'#94a3b8','putih'=>'#f8fafc'];

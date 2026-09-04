@@ -5,8 +5,7 @@ $id = sanitize($_GET['id'] ?? 0);
 $product = fetchSingleData("SELECT * FROM produk WHERE id = '$id'");
 if (!$product) { redirect('katalog.php'); }
 $colors = fetchData("SELECT warna FROM warna_produk WHERE produk_id = '$id' ORDER BY id ASC");
-$settings = fetchSingleData("SELECT * FROM pengaturan LIMIT 1") ?: ['nama_perusahaan' => 'Lepoir', 'whatsapp' => ''];
-$whatsapp = preg_replace('/[^0-9]/', '', $settings['whatsapp'] ?? '');
+$settings = fetchSingleData("SELECT * FROM pengaturan LIMIT 1") ?: ['nama_perusahaan' => "Le'poir", 'whatsapp' => '']; $whatsapp = preg_replace('/[^0-9]/', '', $settings['whatsapp'] ?? '');
 $message = rawurlencode('Halo, saya tertarik memesan ' . $product['nama']);
 function colorHex($color) {
 	$map = ['hitam'=>'#171717','black'=>'#171717','cokelat'=>'#7a4b2a','brunette'=>'#5c321e','copper'=>'#b87333','pirang'=>'#e5b94d','blonde'=>'#e5b94d','merah'=>'#c62828','burgundy'=>'#800020','ungu'=>'#7e3f98','biru'=>'#2563eb','navy'=>'#172554','pink'=>'#ec78a5','orange'=>'#ed8936','hijau'=>'#3f8f58','olive'=>'#71834b','abu-abu'=>'#94a3b8','grey'=>'#94a3b8','putih'=>'#f8fafc'];

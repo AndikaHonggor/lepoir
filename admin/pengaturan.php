@@ -13,7 +13,7 @@ $admin = fetchSingleData("SELECT * FROM admin WHERE id = '" . sanitize($_SESSION
 $pengaturan = fetchSingleData("SELECT * FROM pengaturan LIMIT 1");
 if (!$pengaturan) {
     // Jika belum ada, buat yang baru
-    executeQuery("INSERT INTO pengaturan (nama_perusahaan) VALUES ('Aster Wear')");
+    executeQuery("INSERT INTO pengaturan (nama_perusahaan) VALUES ('LE'POIR')");
     $pengaturan = fetchSingleData("SELECT * FROM pengaturan LIMIT 1");
 }
 
@@ -91,18 +91,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengaturan Perusahaan - Aster Wear Admin</title>
+    <title>Pengaturan Perusahaan - LE'POIR Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body style="background-color: var(--light-gray);">
     <!-- Navbar Admin -->
-    <nav class="navbar navbar-dark bg-dark sticky-top py-3 shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold fs-4 text-white" href="dashboard.php">
-                <?php if (!empty($pengaturan['logo'])): ?><img src="../<?php echo htmlspecialchars($pengaturan['logo']); ?>" alt="Logo" class="brand-mark me-2"><?php else: ?><i class="bi bi-droplet-half text-info me-2"></i><?php endif; ?><?php echo htmlspecialchars($pengaturan['nama_perusahaan'] ?? 'Aster Color'); ?> Admin
-            </a>
+    <a class="navbar-brand fw-bold fs-4 text-white" href="dashboard.php">
+    <?php if (!empty($pengaturan['logo'])): ?>
+        <img src="../<?php echo htmlspecialchars($pengaturan['logo']); ?>" alt="Logo" class="brand-mark me-2">
+    <?php else: ?>
+        <i class="bi bi-droplet-half text-info me-2"></i>
+    <?php endif; ?>
+    <?php echo htmlspecialchars($pengaturan['nama_perusahaan'] ?? "LE'POIR"); ?> Admin
+</a>
             <div class="d-flex align-items-center gap-3">
                 <span class="text-light text-sm">Halo, <strong><?php echo $admin_name; ?></strong></span>
                 <button class="btn btn-outline-light btn-sm" onclick="if(confirm('Yakin ingin logout?')) window.location='../logout.php'">

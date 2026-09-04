@@ -11,13 +11,13 @@ $pengaturan = fetchSingleData("SELECT * FROM pengaturan LIMIT 1");
 if (!$pengaturan) {
     // Nilai default jika belum ada
     $pengaturan = [
-        'nama_perusahaan' => 'LEPOIR',
+        'nama_perusahaan' => "LE'POIR",
         'deskripsi_perusahaan' => 'Penyedia pakaian berkualitas premium',
         'whatsapp' => '6281234567890',
         'instagram' => 'instagram.com',
         'facebook' => 'facebook.com',
         'tiktok' => 'tiktok.com',
-        'email' => 'info@asterwear.com',
+        'email' => 'admin@lepoir.com',
         'logo' => ''
     ];
 }
@@ -200,7 +200,7 @@ function getColorHex($color) {
             <div class="row gy-4 align-items-center">
                 <div class="col-md-6">
                     <h4 class="fw-bold text-white mb-2"><?php echo htmlspecialchars($pengaturan['nama_perusahaan']); ?></h4>
-                    <p class="text-secondary mb-0"><?php echo $pengaturan['deskripsi_perusahaan'] ?? 'Penyedia pakaian berkualitas premium'; ?></p>
+                    <p class="text-secondary mb-0"><?php echo $pengaturan['deskripsi_perusahaan'] ?? 'Penyedia Cat Rambut berkualitas premium'; ?></p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h6 class="fw-bold text-white mb-3">Hubungi & Ikuti Kami</h6>
