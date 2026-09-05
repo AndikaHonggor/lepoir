@@ -11,13 +11,26 @@ function redirect($url) {
 
 // Fungsi untuk cek login admin
 function checkAdminLogin() {
-    if (!isset($_SESSION['admin_id'])) {
-        redirect('login.php');
+    $admin_id = filter_var($_SESSION['admin_id'] ?? null, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
+    $admin = $admin_id ? fetchSingleData("SELECT id, email, nama FROM admin WHERE id = " . (int) $admin_id . " LIMIT 1") : null;
+
+    if (!$admin) {
+        unset($_SESSION['admin_id'], $_SESSION['admin_email'], $_SESSION['admin_name']);
+        redirect('../login.php');
     }
+
+    $_SESSION['admin_id'] = (int) $admin['id'];
+    $_SESSION['admin_email'] = $admin['email'];
+    $_SESSION['admin_name'] = $admin['nama'];
 }
 
 // Fungsi untuk logout
 function logout() {
+    $_SESSION = [];
+    if (ini_get('session.use_cookies')) {
+        $params = session_get_cookie_params();
+        setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+    }
     session_destroy();
     redirect('index.php');
 }

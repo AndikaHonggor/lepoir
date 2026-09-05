@@ -2,8 +2,10 @@
 require_once 'config/database.php';
 require_once 'config/functions.php';
 
-// Jika sudah login, redirect ke dashboard
-if (isset($_SESSION['admin_id'])) {
+// Jika session masih valid, redirect ke dashboard.
+$active_admin_id = filter_var($_SESSION['admin_id'] ?? null, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
+$active_admin = $active_admin_id ? fetchSingleData("SELECT id FROM admin WHERE id = " . (int) $active_admin_id . " LIMIT 1") : null;
+if ($active_admin) {
     redirect('admin/dashboard.php');
 }
 
@@ -27,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             // Verifikasi password
             if (verifyPassword($password, $admin['password'])) {
+                session_regenerate_id(true);
                 $_SESSION['admin_id'] = $admin['id'];
                 $_SESSION['admin_email'] = $admin['email'];
                 $_SESSION['admin_name'] = $admin['nama'];
