@@ -49,7 +49,7 @@ $products = fetchData($products_query);
 
         <!-- Elemen Kanan: User Info & Tombol Logout -->
         <div class="d-flex align-items-center gap-3">
-            <span class="text-light text-sm">Halo, <strong><?php echo htmlspecialchars($admin_name, ENT_QUOTES, 'UTF-8'); ?></strong></span>
+            <span class="text-light text-sm">Hallo, <strong><?php echo htmlspecialchars($admin_name, ENT_QUOTES, 'UTF-8'); ?></strong></span>
             <button class="btn btn-outline-light btn-sm" onclick="if(confirm('Yakin ingin logout?')) window.location='../logout.php'">
                 <i class="bi bi-door-open me-1"></i> Logout
             </button>
